@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PasteCorner — Digital Services & Premium Apps Store</title>
+<meta name="description" content="PasteCorner is a trusted digital service store providing premium apps, Alight Motion preset installation, and professional graphic design services. Fast, affordable, and reliable.">
+<meta name="keywords" content="PasteCorner, Canva Pro, Alight Motion Premium, Preset Installation, Graphic Design, Digital Services">
+<meta name="theme-color" content="#0D0D0D">
+
+<!-- Open Graph -->
+<meta property="og:title" content="PasteCorner — Digital Services & Premium Apps Store">
+<meta property="og:description" content="Fast, trusted, and affordable digital services for creators and everyone.">
+<meta property="og:type" content="website">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect x=%2222%22 y=%2216%22 width=%2256%22 height=%2274%22 rx=%228%22 fill=%22none%22 stroke=%22%23FF4FA3%22 stroke-width=%228%22/><rect x=%2236%22 y=%228%22 width=%2228%22 height=%2216%22 rx=%224%22 fill=%22%23FF4FA3%22/></svg>">
+
+<!-- Google Fonts: Poppins + Inter (brand) / JetBrains Mono (UI-paste accent) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LOADING SCREEN ============ -->
+<div id="loader" class="loader" aria-hidden="true">
+  <div class="loader-mark">
+    <p class="loader-text"><span id="loaderTyped"></span><span class="caret">|</span></p>
+    <p class="loader-hint"><span class="keycap">Ctrl</span><span class="key-plus">+</span><span class="keycap">V</span> to paste</p>
+  </div>
+</div>
+
+<!-- ============ CUSTOM CURSOR ============ -->
+<div class="cursor-caret" id="cursorCaret"></div>
+<div class="cursor-marquee" id="cursorMarquee"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="nav-logo"><i class="fa-solid fa-paste logo-mark"></i>PASTE<span>CORNER</span></a>
+
+    <nav class="nav-menu" id="navMenu">
+      <a href="#home" class="nav-link active-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#portfolio" class="nav-link">Portfolio</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="#contact" class="btn btn-glow nav-order">Order Now</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <canvas id="particles"></canvas>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow" data-aos="fade-up">&gt; the corner for everything digital</p>
+    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+      <span class="selected-text">PASTE</span><span class="glow-text">CORNER</span><span class="caret hero-caret">|</span>
+    </h1>
+    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Digital Services &amp; Premium Apps Store</p>
+    <p class="hero-desc" data-aos="fade-up" data-aos-delay="300">Fast, trusted, and affordable digital services for creators and everyone.</p>
+
+    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+      <a href="#contact" class="btn btn-primary">Order Now <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#services" class="btn btn-outline">Explore Services</a>
+    </div>
+
+    <p class="paste-hint" data-aos="fade-up" data-aos-delay="450">
+      <span class="keycap">Ctrl</span><span class="key-plus">+</span><span class="keycap">V</span> — ordering here is that easy
+    </p>
+
+    <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
+      <div class="stat">
+        <h3 class="counter" data-target="2400">0</h3>
+        <p>Orders Completed</p>
+      </div>
+      <div class="stat">
+        <h3 class="counter" data-target="980">0</h3>
+        <p>Happy Customers</p>
+      </div>
+      <div class="stat">
+        <h3 class="counter" data-target="24">0</h3>
+        <p>Hour Avg. Response</p>
+      </div>
+      <div class="stat">
+        <h3 class="counter" data-target="99">0</h3>
+        <p>% Satisfaction</p>
+      </div>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+    <span></span>
+  </a>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual" data-aos="fade-right">
+        <div class="glass-panel about-card marching-border">
+          <i class="fa-solid fa-layer-group about-icon"></i>
+          <h4>Premium Apps</h4>
+          <p>Canva Pro, Alight Motion &amp; more</p>
+        </div>
+        <div class="glass-panel about-card floating-delay marching-border">
+          <i class="fa-solid fa-font about-icon"></i>
+          <h4>Design Studio</h4>
+          <p>Graphic Design, covers, banners & posters &amp; posters</p>
+        </div>
+        <div class="about-glow"></div>
+      </div>
+
+      <div class="about-text" data-aos="fade-left">
+        <p class="section-eyebrow">&gt; who we are</p>
+        <h2 class="section-title">About PasteCorner</h2>
+        <p class="section-desc">
+          PasteCorner is a trusted digital service store providing premium apps, Alight Motion preset
+          installation, and professional graphic design services. We focus on delivering fast responses,
+          affordable prices, and high-quality results — built for creators, editors, and everyone in between.
+        </p>
+
+        <ul class="about-points">
+          <li><i class="fa-solid fa-check"></i> Fast, reliable admin response</li>
+          <li><i class="fa-solid fa-check"></i> Transparent, affordable pricing</li>
+          <li><i class="fa-solid fa-check"></i> Safe installation &amp; secure transactions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <p class="section-eyebrow">&gt; what we offer</p>
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-desc">Everything you need in one corner — premium software, presets, and graphic design.</p>
+    </div>
+
+    <div class="service-grid">
+      <div class="service-card glass-panel marching-border" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+        <h3>Premium Apps</h3>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> Canva Pro</li>
+          <li><i class="fa-solid fa-circle-check"></i> Alight Motion Premium</li>
+          <li><i class="fa-solid fa-circle-check"></i> More Premium Apps Coming Soon</li>
+        </ul>
+        <a href="#pricing" class="service-link">See pricing <i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+
+      <div class="service-card glass-panel marching-border" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-icon"><i class="fa-solid fa-file-zipper"></i></div>
+        <h3>Preset Installation</h3>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> XML Installation</li>
+          <li><i class="fa-solid fa-circle-check"></i> Package Installation</li>
+          <li><i class="fa-solid fa-circle-check"></i> Fast Process</li>
+          <li><i class="fa-solid fa-circle-check"></i> Safe Installation</li>
+        </ul>
+        <a href="#pricing" class="service-link">See pricing <i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+
+      <div class="service-card glass-panel marching-border" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-icon"><i class="fa-solid fa-font"></i></div>
+        <h3>Graphic Design</h3>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> Logo Design</li>
+          <li><i class="fa-solid fa-circle-check"></i> Album Cover</li>
+          <li><i class="fa-solid fa-circle-check"></i> Poster</li>
+          <li><i class="fa-solid fa-circle-check"></i> Banner</li>
+          <li><i class="fa-solid fa-circle-check"></i> Social Media Design</li>
+          <li><i class="fa-solid fa-circle-check"></i> Thumbnail</li>
+          <li><i class="fa-solid fa-circle-check"></i> Custom Design</li>
+        </ul>
+        <a href="#pricing" class="service-link">See pricing <i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="why-us" id="why-us">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <p class="section-eyebrow">&gt; why pastecorner</p>
+      <h2 class="section-title">Why Choose Us</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card marching-border" data-aos="fade-up" data-aos-delay="0">
+        <i class="fa-solid fa-bolt"></i>
+        <h4>Fast Response</h4>
+        <p>Admins reply quickly so you never wait long for help.</p>
+      </div>
+      <div class="why-card marching-border" data-aos="fade-up" data-aos-delay="50">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h4>Trusted Service</h4>
+        <p>Hundreds of orders delivered with consistent quality.</p>
+      </div>
+      <div class="why-card marching-border" data-aos="fade-up" data-aos-delay="100">
+        <i class="fa-solid fa-tag"></i>
+        <h4>Affordable Price</h4>
+        <p>Premium results without the premium price tag.</p>
+      </div>
+      <div class="why-card marching-border" data-aos="fade-up" data-aos-delay="150">
+        <i class="fa-solid fa-gem"></i>
+        <h4>High Quality</h4>
+        <p>Every deliverable is checked before it reaches you.</p>
+      </div>
+      <div class="why-card marching-border" data-aos="fade-up" data-aos-delay="200">
+        <i class="fa-solid fa-lock"></i>
+        <h4>Secure Transactions</h4>
+        <p>Clear process and safe payment handling, every order.</p>
+      </div>
+      <div class="why-card marching-border" data-aos="fade-up" data-aos-delay="250">
+        <i class="fa-solid fa-headset"></i>
+        <h4>After Sales Support</h4>
+        <p>Need a fix or revision? We're here after delivery too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <p class="section-eyebrow">&gt; our work</p>
+      <h2 class="section-title">Portfolio</h2>
+      <p class="section-desc">A glimpse of designs we've crafted for our clients.</p>
+    </div>
+
+    <div class="portfolio-filters" data-aos="fade-up">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="album">Album Cover</button>
+      <button class="filter-btn" data-filter="poster">Poster</button>
+      <button class="filter-btn" data-filter="logo">Logo</button>
+      <button class="filter-btn" data-filter="social">Social Media</button>
+      <button class="filter-btn" data-filter="banner">Banner</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+      <!-- Populated by script.js -->
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+  <img src="" alt="" id="lightboxImg">
+  <p class="lightbox-caption" id="lightboxCaption"></p>
+</div>
+
+<!-- ============ PRICING ============ -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <p class="section-eyebrow">&gt; simple &amp; transparent</p>
+      <h2 class="section-title">Pricing</h2>
+      <p class="section-desc">Starting prices below — contact admin for exact quotes on custom requests.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card glass-panel marching-border" data-aos="fade-up" data-aos-delay="0">
+        <div class="pricing-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+        <h3>Premium Apps</h3>
+        <p class="price">Start from <span>IDR 15,000</span></p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Canva Pro (1 Month+)</li>
+          <li><i class="fa-solid fa-check"></i> Alight Motion Premium</li>
+          <li><i class="fa-solid fa-check"></i> Lifetime Activation Options</li>
+        </ul>
+        <a href="https://wa.me/6283140348299" target="_blank" class="btn btn-glow full-width">Contact Admin</a>
+      </div>
+
+      <div class="pricing-card glass-panel featured marching-border" data-aos="fade-up" data-aos-delay="100">
+        <span class="pricing-badge">Most Popular</span>
+        <div class="pricing-icon"><i class="fa-solid fa-file-zipper"></i></div>
+        <h3>Preset Installation</h3>
+        <p class="price">Start from <span>IDR 5,000</span></p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> XML Installation</li>
+          <li><i class="fa-solid fa-check"></i> Package Installation</li>
+          <li><i class="fa-solid fa-check"></i> Fast &amp; Safe Process</li>
+        </ul>
+        <a href="https://wa.me/6283140348299" target="_blank" class="btn btn-glow full-width">Contact Admin</a>
+      </div>
+
+      <div class="pricing-card glass-panel marching-border" data-aos="fade-up" data-aos-delay="200">
+        <div class="pricing-icon"><i class="fa-solid fa-font"></i></div>
+        <h3>Typography Design</h3>
+        <p class="price">Start from <span>IDR 15,000</span></p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Logo / Poster / Banner</li>
+          <li><i class="fa-solid fa-check"></i> Album Cover &amp; Thumbnail</li>
+          <li><i class="fa-solid fa-check"></i> Custom Design Requests</li>
+        </ul>
+        <a href="https://wa.me/6281316703012" target="_blank" class="btn btn-glow full-width">Contact Admin</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORDER PROCESS ============ -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <p class="section-eyebrow">&gt; how it works</p>
+      <h2 class="section-title">Order Process</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="0">
+        <div class="timeline-marker">01</div>
+        <h4>Choose Service</h4>
+        <p>Browse Premium Apps, Preset Installation, or Typography Design.</p>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="timeline-marker">02</div>
+        <h4>Contact Admin</h4>
+        <p>Reach out on WhatsApp to confirm details.</p>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="timeline-marker">03</div>
+        <h4>Payment</h4>
+        <p>Complete a secure payment once your order is confirmed.</p>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="timeline-marker">04</div>
+        <h4>Processing</h4>
+        <p>Our team gets to work on your order right away.</p>
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+        <div class="timeline-marker">05</div>
+        <h4>Completed</h4>
+        <p>Receive your finished order, ready to use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <p class="section-eyebrow">&gt; client love</p>
+      <h2 class="section-title">Testimonials</h2>
+    </div>
+
+    <div class="testimonial-slider" data-aos="fade-up">
+      <div class="testimonial-track" id="testimonialTrack">
+
+        <div class="testimonial-card glass-panel">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="testimonial-text">"Ordered Alight Motion Premium and it was installed within minutes. Super smooth process!"</p>
+          <div class="testimonial-author">
+            <div class="avatar">RA</div>
+            <div>
+              <h5>Rian A.</h5>
+              <span>Content Creator</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-panel">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="testimonial-text">"The logo design exceeded my expectations. Fast delivery and the admin was super responsive."</p>
+          <div class="testimonial-author">
+            <div class="avatar">SN</div>
+            <div>
+              <h5>Sasha N.</h5>
+              <span>Small Business Owner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-panel">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="testimonial-text">"Canva Pro activation worked flawlessly. Great price and even better support after purchase."</p>
+          <div class="testimonial-author">
+            <div class="avatar">DP</div>
+            <div>
+              <h5>Dimas P.</h5>
+              <span>Freelance Editor</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-panel">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="testimonial-text">"My album cover turned out amazing. PasteCorner really understands the creative vision."</p>
+          <div class="testimonial-author">
+            <div class="avatar">MK</div>
+            <div>
+              <h5>Maya K.</h5>
+              <span>Music Producer</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="slider-controls">
+        <button id="prevSlide" aria-label="Previous testimonial"><i class="fa-solid fa-arrow-left"></i></button>
+        <div class="slider-dots" id="sliderDots"></div>
+        <button id="nextSlide" aria-label="Next testimonial"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <p class="section-eyebrow">&gt; good to know</p>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-list" data-aos="fade-up">
+      <div class="faq-item">
+        <button class="faq-question">
+          Are Premium Apps Safe?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Every app and activation method we provide is tested beforehand to make sure it installs cleanly and works as expected.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How Long Is The Process?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Most Premium Apps and Preset Installations are completed within minutes to a few hours. Typography Design projects usually take 1–3 days depending on complexity.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Can I Request Revisions?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Absolutely. Typography Design orders include revision rounds so the final result matches what you had in mind.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What Payment Methods Are Accepted?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>We accept bank transfer, e-wallets, and other common local payment methods. Ask your admin for the full list.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How Do I Order?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Choose a service, message an admin on WhatsApp, confirm your order, and complete payment. That's it!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <p class="section-eyebrow">&gt; let's talk</p>
+      <h2 class="section-title">Contact Admin</h2>
+      <p class="section-desc">Message the right admin on WhatsApp for your order.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card glass-panel marching-border" data-aos="fade-up" data-aos-delay="0">
+        <div class="contact-avatar">P</div>
+        <h3>Patrick</h3>
+        <p class="contact-role">Premium Apps &amp; Preset Installation</p>
+        <div class="contact-buttons">
+          <a href="https://wa.me/6283140348299" class="btn btn-social whatsapp full-width"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="contact-card glass-panel marching-border" data-aos="fade-up" data-aos-delay="100">
+        <div class="contact-avatar">D</div>
+        <h3>Stefanny</h3>
+        <p class="contact-role">Graphic Designer</p>
+        <div class="contact-buttons">
+          <a href="https://wa.me/6281316703012" class="btn btn-social whatsapp full-width"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#home" class="nav-logo"><i class="fa-solid fa-paste logo-mark"></i>PASTE<span>CORNER</span></a>
+      <p>Fast, trusted, and affordable digital services for creators and everyone.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h5>Quick Links</h5>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+
+    <div class="footer-links">
+      <h5>Support</h5>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="#process">Order Process</a>
+      <a href="#testimonials">Testimonials</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 PasteCorner. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- ============ FLOATING BUTTONS ============ -->
+<a href="https://www.instagram.com/pastecorner/" class="floating-instagram" aria-label="Instagram" target="_blank">
+  <i class="fa-brands fa-instagram"></i>
+</a>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
